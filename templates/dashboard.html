@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Dashboard - Pricera</title>
+  <link href="{{ url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <script src="{{ url_for('static', filename='home.js')}}"></script>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon1'></i>
+      <div class="logo_name">Pricera</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="{{ url_for('home.index') }}">
+          <i class='bx bx-grid-alt icon2'></i>
+          <span class="links_name">Home</span>
+        </a>
+        <span class="tooltip">Home</span>
+      </li>
+      <li>
+        <a href="{{ url_for('dashboard.dash') }}">
+          <i class='bx bx-user icon3'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+    </ul>
+  </div>
+  <div class="bigtitle">
+    <h1>Get Started Now.</h1>
+    <p>Paste your Product's Name into the box below to see instant results.</p>
+    <div class="inputstuff">
+        <form action="{{ url_for("dashboard.dash")}}" method="post">
+        <input type="text" id="url" name="url" placeholder="Product Name">
+        <button type="submit">Submit</button>
+    </div>
+  </div>
+  
+  <div class="yap">
+    <div class="section">
+      <h1 id="placeholdertext">Your Results will show up here.</h1>
+      <h1 style="font-size: 25px; display: none;" id="pricethingy">Price of product over the past year</h1>
+      <canvas id="myChart" style="width:100%;max-width:1000px;margin:auto;margin-top:75px;"></canvas>
+      <img src="https://picsum.photos/seed/picsum/640/360" id="placeholdercat">
+      <p id="besttime" style="margin-top: 40px; font-size: 18px;"></p>
+    </div>
+    
+    <script type="text/javascript">
+      if("{{ prices }}" != ""){
+        var data = "{{ prices }}";
+        let t = myTest(data);
+      }
+    </script>
+  </div>
+
+
+</body>
+
+</html>

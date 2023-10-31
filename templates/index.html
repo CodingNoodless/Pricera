@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Pricera</title>
+  <link href="{{ url_for('static', filename='css/home.css')}}" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class='bx bxl-c-plus-plus icon1'></i>
+          <div class="logo_name">Pricera</div>
+          <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <a href="{{ url_for('home.index') }}">
+              <i class='bx bx-grid-alt icon2'></i>
+              <span class="links_name">Home</span>
+            </a>
+            <span class="tooltip">Home</span>
+          </li>
+          <li>
+            <a href="{{ url_for('dashboard.dash') }}">
+              <i class='bx bx-user icon3'></i>
+              <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+        </ul>
+      </div>
+     <div class="bigtitle">
+      <h1>Saving Simplified.</h1>
+      <p>Avoid getting scammed by current inflated prices. With the power of one button, find the best price available and any other info about the price of the product.</p>
+      <img src="{{ url_for('static', filename='images/stock.png')}}">
+     </div>
+     <div class="yap">
+      <div class="section">
+        <h1>The Problem.</h1>
+        <p>Inflation is a problem that the whole world is facing. Due to inflation, people around the world are suffering with fluctuating prices on every product they buy. To combat this issue, Pricera helps individuals buy products at the right places, at the right times.</p>
+        <img src="https://www.statista.com/graphic/1/191077/inflation-rate-in-the-usa-since-1990.jpg">
+      </div>
+      <div class="section2">
+        <h1>How it works.</h1>
+        <p>To start saving right now, you can head to the dashboard tab to get started. All you need is a FREE account and the product name for the product you want to price check.</p>
+        <p>{{ answer }}</p>
+      </div>
+     </div>
+
+  <script src="{{ url_for('static', filename='home.js')}}"></script>
+</body>
+
+</html>
