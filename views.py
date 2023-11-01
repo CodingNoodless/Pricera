@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request
 from bardapi import Bard
 import re
 
-token = 'cgigCPcMAUQJT8ani37LpgGKCOXLc9FfrLI8QdKHKImvAbVD5TGXNF6LDzkLdQwFZzLO-Q.'
+token = 'cgigCFGjepDRRbsfwbcRD9UMOrAGlyd4uXNXORvrXh9cb3Ax4po6E1khwGoO1HSmlN5OJQ.'
 bard = Bard(token=token)
 
 home = Blueprint(__name__,"home")
